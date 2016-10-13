@@ -22,7 +22,22 @@ class MainViewController: UITabBarController {
             print("没有获取到json数据")
             return
         }
-        
+        /**
+         // 如果在调用的方法最后有个throws，说明该方法会抛出异常，需要对该异常进行处理，有三种处理方式
+         //1 try 手动处理
+         do{
+         try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+         }catch{
+         //error是系统提供的临时常量
+         print(error)
+         }
+         //2 try? 系统处理，可选类型，系统直接处理，如果出现异常直接返回nil（常用方式）
+         
+         try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+         
+         //3 try! 直接告诉系统，该方法不会出异常，如果出现异常，直接崩溃
+         let dictobject = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+         **/
         guard let dictobject = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) else{
             return
         }
