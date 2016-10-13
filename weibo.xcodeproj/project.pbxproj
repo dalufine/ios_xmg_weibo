@@ -11,7 +11,7 @@
 		25205A421DAFB55600440741 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A411DAFB55600440741 /* Message.storyboard */; };
 		25205A451DAFB57E00440741 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A431DAFB57E00440741 /* Discover.storyboard */; };
 		25205A471DAFB5A200440741 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A461DAFB5A200440741 /* Profile.storyboard */; };
-		25205A4A1DAFBB6200440741 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A481DAFBB6200440741 /* Scan.storyboard */; };
+		25205A4C1DAFCE6500440741 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A4B1DAFCE6500440741 /* Null.storyboard */; };
 		2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363591DAF3A8100DF3E3F /* AppDelegate.swift */; };
 		2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573635D1DAF3A8100DF3E3F /* Main.storyboard */; };
 		257363611DAF3A8100DF3E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257363601DAF3A8100DF3E3F /* Assets.xcassets */; };
@@ -29,7 +29,7 @@
 		25205A411DAFB55600440741 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		25205A441DAFB57E00440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		25205A461DAFB5A200440741 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
-		25205A491DAFBB6200440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scan.storyboard; sourceTree = "<group>"; };
+		25205A4B1DAFCE6500440741 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Null.storyboard; path = ../../../Documents/iosWork/weibo/weibo/Null.storyboard; sourceTree = "<group>"; };
 		257363561DAF3A8100DF3E3F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257363591DAF3A8100DF3E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573635E1DAF3A8100DF3E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 			children = (
 				2573636B1DAF51CB00DF3E3F /* Classes */,
 				257363591DAF3A8100DF3E3F /* AppDelegate.swift */,
-				25205A481DAFBB6200440741 /* Scan.storyboard */,
 				2573635D1DAF3A8100DF3E3F /* Main.storyboard */,
 				257363601DAF3A8100DF3E3F /* Assets.xcassets */,
 				257363621DAF3A8100DF3E3F /* LaunchScreen.storyboard */,
@@ -145,6 +144,7 @@
 		2573637B1DAF7C9200DF3E3F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				25205A4B1DAFCE6500440741 /* Null.storyboard */,
 				2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */,
 			);
 			name = Resource;
@@ -217,8 +217,8 @@
 				2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */,
 				25205A421DAFB55600440741 /* Message.storyboard in Resources */,
 				25205A451DAFB57E00440741 /* Discover.storyboard in Resources */,
+				25205A4C1DAFCE6500440741 /* Null.storyboard in Resources */,
 				2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */,
-				25205A4A1DAFBB6200440741 /* Scan.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +257,6 @@
 			);
 			name = Discover.storyboard;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		25205A481DAFBB6200440741 /* Scan.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				25205A491DAFBB6200440741 /* Base */,
-			);
-			name = Scan.storyboard;
 			sourceTree = "<group>";
 		};
 		2573635D1DAF3A8100DF3E3F /* Main.storyboard */ = {
