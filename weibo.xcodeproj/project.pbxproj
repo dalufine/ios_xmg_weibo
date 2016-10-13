@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25205A401DAFB53B00440741 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A3E1DAFB53B00440741 /* Home.storyboard */; };
+		25205A421DAFB55600440741 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A411DAFB55600440741 /* Message.storyboard */; };
+		25205A451DAFB57E00440741 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A431DAFB57E00440741 /* Discover.storyboard */; };
+		25205A471DAFB5A200440741 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A461DAFB5A200440741 /* Profile.storyboard */; };
+		25205A4A1DAFBB6200440741 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A481DAFBB6200440741 /* Scan.storyboard */; };
 		2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363591DAF3A8100DF3E3F /* AppDelegate.swift */; };
 		2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573635D1DAF3A8100DF3E3F /* Main.storyboard */; };
 		257363611DAF3A8100DF3E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257363601DAF3A8100DF3E3F /* Assets.xcassets */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25205A3F1DAFB53B00440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		25205A411DAFB55600440741 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
+		25205A441DAFB57E00440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
+		25205A461DAFB5A200440741 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
+		25205A491DAFBB6200440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scan.storyboard; sourceTree = "<group>"; };
 		257363561DAF3A8100DF3E3F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257363591DAF3A8100DF3E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573635E1DAF3A8100DF3E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +76,7 @@
 			children = (
 				2573636B1DAF51CB00DF3E3F /* Classes */,
 				257363591DAF3A8100DF3E3F /* AppDelegate.swift */,
+				25205A481DAFBB6200440741 /* Scan.storyboard */,
 				2573635D1DAF3A8100DF3E3F /* Main.storyboard */,
 				257363601DAF3A8100DF3E3F /* Assets.xcassets */,
 				257363621DAF3A8100DF3E3F /* LaunchScreen.storyboard */,
@@ -89,6 +100,7 @@
 		2573636C1DAF51CB00DF3E3F /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				25205A431DAFB57E00440741 /* Discover.storyboard */,
 				257363771DAF580100DF3E3F /* DiscoverViewController.swift */,
 			);
 			path = Discover;
@@ -97,6 +109,7 @@
 		2573636D1DAF51CB00DF3E3F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				25205A3E1DAFB53B00440741 /* Home.storyboard */,
 				257363731DAF57D600DF3E3F /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -114,6 +127,7 @@
 		2573636F1DAF51CB00DF3E3F /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				25205A411DAFB55600440741 /* Message.storyboard */,
 				257363751DAF57E800DF3E3F /* MessageViewController.swift */,
 			);
 			path = Message;
@@ -122,6 +136,7 @@
 		257363701DAF51CB00DF3E3F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				25205A461DAFB5A200440741 /* Profile.storyboard */,
 				257363791DAF580E00DF3E3F /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -196,9 +211,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				257363641DAF3A8100DF3E3F /* LaunchScreen.storyboard in Resources */,
+				25205A401DAFB53B00440741 /* Home.storyboard in Resources */,
+				25205A471DAFB5A200440741 /* Profile.storyboard in Resources */,
 				257363611DAF3A8100DF3E3F /* Assets.xcassets in Resources */,
 				2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */,
+				25205A421DAFB55600440741 /* Message.storyboard in Resources */,
+				25205A451DAFB57E00440741 /* Discover.storyboard in Resources */,
 				2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */,
+				25205A4A1DAFBB6200440741 /* Scan.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +241,32 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		25205A3E1DAFB53B00440741 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25205A3F1DAFB53B00440741 /* Base */,
+			);
+			name = Home.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		25205A431DAFB57E00440741 /* Discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25205A441DAFB57E00440741 /* Base */,
+			);
+			name = Discover.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		25205A481DAFBB6200440741 /* Scan.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25205A491DAFBB6200440741 /* Base */,
+			);
+			name = Scan.storyboard;
+			sourceTree = "<group>";
+		};
 		2573635D1DAF3A8100DF3E3F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
