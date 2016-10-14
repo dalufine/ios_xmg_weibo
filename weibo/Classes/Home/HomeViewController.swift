@@ -10,10 +10,42 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
+    lazy var titleBtn : TitleButton = TitleButton()
+    
+    // MARK: - 系统回调
     override func viewDidLoad() {
         super.viewDidLoad()
         visitorView.startRotationAnim()
+        if(!isLogin){
+            return
+        }
+        setupNavigationBar()
     }
     
-    
+}
+
+// MARK: - UI
+extension HomeViewController{
+    ///自定义navigation
+    func setupNavigationBar(){
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
+        
+        titleBtn.setTitle("dalu", for: .normal)
+        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(titleBtn:)), for: .touchUpInside)
+        navigationItem.titleView = titleBtn
+    }
+}
+
+// MARK: - 事件监听
+extension HomeViewController{
+    func titleBtnClick(titleBtn:TitleButton){
+        titleBtn.isSelected = !titleBtn.isSelected
+        
+        let popoverVc = PopoverViewController()
+        
+        //设置控制器的modal样式，不然popoverVc弹出后，下面的VC会被回收
+        popoverVc.modalPresentationStyle = .custom
+        present(popoverVc, animated: true, completion: nil)
+    }
 }
