@@ -28,7 +28,7 @@
         <scene sceneID="haz-ke-W89">
             <objects>
                 <navigationController id="hx5-Ve-5BJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" id="pg3-3Q-JXC"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_highlighted" id="pg3-3Q-JXC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w8p-H5-m6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -45,5 +45,6 @@
     </scenes>
     <resources>
         <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_message_center_highlighted" width="30" height="30"/>
     </resources>
 </document>

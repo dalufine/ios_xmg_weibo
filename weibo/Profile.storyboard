@@ -28,7 +28,7 @@
         <scene sceneID="mgo-sI-IDe">
             <objects>
                 <navigationController id="R9c-AA-KRL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" id="pyM-DR-rVT"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" selectedImage="tabbar_profile_highlighted" id="pyM-DR-rVT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5h-SQ-VnZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -45,5 +45,6 @@
     </scenes>
     <resources>
         <image name="tabbar_profile" width="30" height="30"/>
+        <image name="tabbar_profile_highlighted" width="30" height="30"/>
     </resources>
 </document>

@@ -22,6 +22,7 @@
 		257363781DAF580100DF3E3F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363771DAF580100DF3E3F /* DiscoverViewController.swift */; };
 		2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363791DAF580E00DF3E3F /* ProfileViewController.swift */; };
 		2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */; };
+		25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E501DB06E78000B258C /* UIButton-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		257363771DAF580100DF3E3F /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		257363791DAF580E00DF3E3F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		25F83E501DB06E78000B258C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				2573636F1DAF51CB00DF3E3F /* Message */,
 				2573636C1DAF51CB00DF3E3F /* Discover */,
 				257363701DAF51CB00DF3E3F /* Profile */,
+				25F83E4E1DB06E3E000B258C /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -149,6 +152,22 @@
 			);
 			name = Resource;
 			path = "../../../../../../Downloads/资料 2/Resource";
+			sourceTree = "<group>";
+		};
+		25F83E4E1DB06E3E000B258C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				25F83E4F1DB06E3E000B258C /* Category */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		25F83E4F1DB06E3E000B258C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				25F83E501DB06E78000B258C /* UIButton-Extension.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */,
+				25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */,
 				2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */,
 				257363721DAF53ED00DF3E3F /* MainViewController.swift in Sources */,
 				257363761DAF57E800DF3E3F /* MessageViewController.swift in Sources */,
