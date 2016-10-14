@@ -12,6 +12,8 @@
 		25205A451DAFB57E00440741 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A431DAFB57E00440741 /* Discover.storyboard */; };
 		25205A471DAFB5A200440741 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A461DAFB5A200440741 /* Profile.storyboard */; };
 		25205A4C1DAFCE6500440741 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A4B1DAFCE6500440741 /* Null.storyboard */; };
+		254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */; };
+		254FB4CD1DB0AAFF000AA0A3 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */; };
 		2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363591DAF3A8100DF3E3F /* AppDelegate.swift */; };
 		2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573635D1DAF3A8100DF3E3F /* Main.storyboard */; };
 		257363611DAF3A8100DF3E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257363601DAF3A8100DF3E3F /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 		2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363791DAF580E00DF3E3F /* ProfileViewController.swift */; };
 		2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */; };
 		25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E501DB06E78000B258C /* UIButton-Extension.swift */; };
+		25F83E541DB08625000B258C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E531DB08625000B258C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,8 @@
 		25205A441DAFB57E00440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		25205A461DAFB5A200440741 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		25205A4B1DAFCE6500440741 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Null.storyboard; path = ../../../Documents/iosWork/weibo/weibo/Null.storyboard; sourceTree = "<group>"; };
+		254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		257363561DAF3A8100DF3E3F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257363591DAF3A8100DF3E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573635E1DAF3A8100DF3E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		257363791DAF580E00DF3E3F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		25F83E501DB06E78000B258C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		25F83E531DB08625000B258C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 		2573636E1DAF51CB00DF3E3F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				25F83E521DB08613000B258C /* Visitor */,
 				2573637B1DAF7C9200DF3E3F /* Resource */,
 				257363711DAF53ED00DF3E3F /* MainViewController.swift */,
 			);
@@ -168,6 +175,17 @@
 				25F83E501DB06E78000B258C /* UIButton-Extension.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		25F83E521DB08613000B258C /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				25F83E531DB08625000B258C /* BaseViewController.swift */,
+				254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */,
+				254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */,
+			);
+			name = Visitor;
+			path = "../../../../../../Downloads/资料 2/Visitor";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				257363641DAF3A8100DF3E3F /* LaunchScreen.storyboard in Resources */,
+				254FB4CD1DB0AAFF000AA0A3 /* VisitorView.xib in Resources */,
 				25205A401DAFB53B00440741 /* Home.storyboard in Resources */,
 				25205A471DAFB5A200440741 /* Profile.storyboard in Resources */,
 				257363611DAF3A8100DF3E3F /* Assets.xcassets in Resources */,
@@ -253,6 +272,8 @@
 				2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */,
 				257363721DAF53ED00DF3E3F /* MainViewController.swift in Sources */,
 				257363761DAF57E800DF3E3F /* MessageViewController.swift in Sources */,
+				25F83E541DB08625000B258C /* BaseViewController.swift in Sources */,
+				254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */,
 				257363741DAF57D600DF3E3F /* HomeViewController.swift in Sources */,
 				257363781DAF580100DF3E3F /* DiscoverViewController.swift in Sources */,
 			);
