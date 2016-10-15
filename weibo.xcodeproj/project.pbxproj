@@ -28,6 +28,7 @@
 		257363781DAF580100DF3E3F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363771DAF580100DF3E3F /* DiscoverViewController.swift */; };
 		2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363791DAF580E00DF3E3F /* ProfileViewController.swift */; };
 		2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */; };
+		25A71D211DB1DDEC0060DF1E /* DLUIPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */; };
 		25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E501DB06E78000B258C /* UIButton-Extension.swift */; };
 		25F83E541DB08625000B258C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E531DB08625000B258C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		257363771DAF580100DF3E3F /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		257363791DAF580E00DF3E3F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLUIPresentationController.swift; sourceTree = "<group>"; };
 		25F83E501DB06E78000B258C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		25F83E531DB08625000B258C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			children = (
 				25320CA31DB12CE7009E5C93 /* PopoverViewController.swift */,
 				25320CA41DB12CE7009E5C93 /* PopoverViewController.xib */,
+				25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A71D211DB1DDEC0060DF1E /* DLUIPresentationController.swift in Sources */,
 				25320C9F1DB12015009E5C93 /* UIBarButtonItem-Extension.swift in Sources */,
 				2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */,
 				25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */,
