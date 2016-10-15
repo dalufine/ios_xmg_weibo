@@ -12,10 +12,13 @@ class DLUIPresentationController: UIPresentationController {
     
     lazy var coverView : UIView = UIView()
     
+    var presentedFrame : CGRect = CGRect.zero
+    
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         
-        presentedView?.frame = CGRect(x: 100, y: 55, width: 180, height: 250)
+        presentedView?.frame = presentedFrame
+        
         setupCoverView()
     }
 
