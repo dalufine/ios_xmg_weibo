@@ -10,7 +10,12 @@ import UIKit
 
 class HomeViewController : BaseViewController {
     lazy var titleBtn : TitleButton = TitleButton()
-    lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
+    
+    //在闭包中如果使用当前对象的属性或者调用方法，需要加上self,闭包里面的代码好像不能自动提示
+    //内部存在循环引用，当前强引用闭包，闭包内部引用了self，所以需要加上弱引用，此时闭包里面的self就是可选类型了
+    lazy var popoverAnimator : PopoverAnimator = PopoverAnimator { [weak self](presented)->() in
+        self?.titleBtn.isSelected = presented
+    }
     
     // MARK: - 系统回调
     override func viewDidLoad() {

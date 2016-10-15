@@ -9,8 +9,22 @@
 import UIKit
 
 class PopoverAnimator: NSObject {
+    
+    // MARK: - 向外提供的参数
     var presentedFrame : CGRect = CGRect.zero
     var isPresent = false
+    
+    // MARK: - 定义闭包
+    //闭包默认为 () -> () 因为没有给初始化，所以定义为下面可选类型的格式
+    var callBack : ((_ isPresented : Bool) -> ())?
+    
+    override init(){
+    }
+    //如果自定义了一个构造函数，却没有对默认的init()方法重写，则自定义的会覆盖默认
+    init(callBack : @escaping (_ isPresented : Bool) -> ()) {
+        self.callBack = callBack
+    }
+    
 }
 
 extension PopoverAnimator : UIViewControllerTransitioningDelegate{
@@ -24,12 +38,14 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate{
     ///自定义弹出动画
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = true
+        callBack!(isPresent)
         return self
     }
     
     ///自定义消失动画
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = false
+        callBack!(isPresent)
         return self
     }
 }
