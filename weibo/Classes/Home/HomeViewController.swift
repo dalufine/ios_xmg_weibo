@@ -37,14 +37,14 @@ extension HomeViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         
         titleBtn.setTitle("dalu", for: .normal)
-        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(titleBtn:)), for: .touchUpInside)
+        titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(_:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
     }
 }
 
 // MARK: - 事件监听
 extension HomeViewController{
-    func titleBtnClick(titleBtn:TitleButton){
+    func titleBtnClick(_ titleBtn:TitleButton){
         titleBtn.isSelected = !titleBtn.isSelected
         
         let popoverVc = PopoverViewController()

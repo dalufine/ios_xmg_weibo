@@ -11,7 +11,7 @@ import UIKit
 extension UIButton{
 
     ///类方法
-    class func createButton(imageName:String,bgImageName:String)->UIButton{
+    class func createButton(_ imageName:String,bgImageName:String)->UIButton{
         let btn = UIButton()
         btn.setBackgroundImage(UIImage(named:bgImageName), for: .normal)
         btn.setBackgroundImage(UIImage(named:bgImageName+"_highlighted"), for: .highlighted)
