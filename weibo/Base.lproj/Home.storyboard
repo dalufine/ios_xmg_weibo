@@ -9,10 +9,20 @@
         <scene sceneID="OmC-qV-C6r">
             <objects>
                 <tableViewController id="HI0-aX-I2L" customClass="HomeViewController" customModule="weibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rv7-n1-3vZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rv7-n1-3vZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCellID" rowHeight="87" id="4YK-e8-Yjd">
+                                <rect key="frame" x="0.0" y="92" width="375" height="87"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4YK-e8-Yjd" id="PSF-h7-zFj">
+                                    <frame key="frameInset" width="375" height="86.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="HI0-aX-I2L" id="M4J-BD-U5n"/>
                             <outlet property="delegate" destination="HI0-aX-I2L" id="On1-OB-hXy"/>
@@ -22,7 +32,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKG-Z7-wd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1266" y="-1782"/>
+            <point key="canvasLocation" x="-1266.4000000000001" y="-1782.4587706146929"/>
         </scene>
         <!--首页-->
         <scene sceneID="ocg-lu-9bu">

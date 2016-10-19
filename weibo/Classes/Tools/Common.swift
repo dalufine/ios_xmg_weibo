@@ -8,6 +8,6 @@
 
 import Foundation
 
-let app_key = "3467343333"
-let app_secret = "99cffaeff85c7e8e18a95913de1479d7"
-let redirect_uri = "http://www.520it.com"
+let app_key = "2758181830"
+let app_secret = "06d40517805c02e779c2778918c7f7b5"
+let redirect_uri = "http://dalufan.com/"

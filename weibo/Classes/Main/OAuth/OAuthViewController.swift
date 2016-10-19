@@ -47,7 +47,7 @@ extension OAuthViewController{
     }
     
     func fillItemClick() {
-        let jsCode = "document.getElementById('userId').value='1606020376@qq.com';document.getElementById('passwd').value='haomage'"
+        let jsCode = "document.getElementById('userId').value='dalufine@163.com';document.getElementById('passwd').value=''"
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
 }
@@ -106,7 +106,7 @@ extension OAuthViewController{
         guard let uid = account.uid else{
             return
         }
-        NetworkTools.shareInstance.loadUserInfo(access_token: access_token, uid: uid) { (result,error) in
+        NetworkTools.shareInstance.loadUserInfo(access_token : access_token, uid : uid) { (result,error) in
             if error != nil{
                 print(error)
                 return
@@ -116,7 +116,17 @@ extension OAuthViewController{
             }
             account.screen_name = userInfoDict["screen_name"] as? String
             account.avatar_large = userInfoDict["avatar_large"] as? String
-            print(account)
+            
+            NSKeyedArchiver.archiveRootObject(account, toFile: UserAccountViewModel.shareIntance.accountPath)
+            
+            UserAccountViewModel.shareIntance.account = account
+            
+            //退出当前控制器
+            self.dismiss(animated: false, completion: {
+                //显示欢迎界面
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
+            
         }
     }
 }

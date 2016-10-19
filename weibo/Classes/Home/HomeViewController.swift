@@ -17,6 +17,8 @@ class HomeViewController : BaseViewController {
         self?.titleBtn.isSelected = presented
     }
     
+    lazy var statuses : [Status] = [Status]()
+    
     // MARK: - 系统回调
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class HomeViewController : BaseViewController {
             return
         }
         setupNavigationBar()
+        loadStatuses()
     }
     
 }
@@ -62,3 +65,40 @@ extension HomeViewController{
     }
 }
 
+//请求数据
+extension HomeViewController{
+    func loadStatuses(){
+        NetworkTools.shareInstance.loadStatuses { (result, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            guard let resultArray = result else{
+                return
+            }
+            
+            for dict in resultArray {
+                let status = Status(dict: dict)
+                self.statuses.append(status)
+            }
+            self.tableView.reloadData()
+        }
+    }
+}
+
+//因为本身是tabviewcontroller，所以不需要遵守协议
+extension HomeViewController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID")!
+        
+        let status = statuses[indexPath.row]
+        cell.textLabel?.text = status.text
+        return cell
+    }
+}
