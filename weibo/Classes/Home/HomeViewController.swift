@@ -17,7 +17,7 @@ class HomeViewController : BaseViewController {
         self?.titleBtn.isSelected = presented
     }
     
-    lazy var statuses : [Status] = [Status]()
+    lazy var statusModels : [StatusViewModel] = [StatusViewModel]()
     
     // MARK: - 系统回调
     override func viewDidLoad() {
@@ -28,6 +28,9 @@ class HomeViewController : BaseViewController {
         }
         setupNavigationBar()
         loadStatuses()
+        //自动计算高度
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight=200
     }
     
 }
@@ -80,7 +83,7 @@ extension HomeViewController{
             
             for dict in resultArray {
                 let status = Status(dict: dict)
-                self.statuses.append(status)
+                self.statusModels.append(StatusViewModel(status: status))
             }
             self.tableView.reloadData()
         }
@@ -90,15 +93,18 @@ extension HomeViewController{
 //因为本身是tabviewcontroller，所以不需要遵守协议
 extension HomeViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statuses.count
+        return statusModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID")!
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID")!
+//        
+//        let statusModel = statusModels[indexPath.row]
+//        cell.textLabel?.text = statusModel.sourceText
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID") as! HomeViewCell
         
-        let status = statuses[indexPath.row]
-        cell.textLabel?.text = status.text
+        cell.viewModel = statusModels[indexPath.row]
         return cell
     }
 }

@@ -17,11 +17,14 @@
 		25205A451DAFB57E00440741 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A431DAFB57E00440741 /* Discover.storyboard */; };
 		25205A471DAFB5A200440741 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A461DAFB5A200440741 /* Profile.storyboard */; };
 		25205A4C1DAFCE6500440741 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A4B1DAFCE6500440741 /* Null.storyboard */; };
+		252787611DBB008A009DCD01 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252787601DBB008A009DCD01 /* HomeViewCell.swift */; };
 		25320C9F1DB12015009E5C93 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25320C9E1DB12015009E5C93 /* UIBarButtonItem-Extension.swift */; };
 		25320CA11DB1242F009E5C93 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25320CA01DB1242F009E5C93 /* TitleButton.swift */; };
 		25320CA51DB12CE7009E5C93 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25320CA31DB12CE7009E5C93 /* PopoverViewController.swift */; };
 		25320CA61DB12CE7009E5C93 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25320CA41DB12CE7009E5C93 /* PopoverViewController.xib */; };
 		253328931DB218FF0038852E /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253328921DB218FF0038852E /* PopoverAnimator.swift */; };
+		25362D391DB8FD3B00668FD2 /* TimeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25362D381DB8FD3B00668FD2 /* TimeTools.swift */; };
+		25362D3B1DB9099000668FD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25362D3A1DB9099000668FD2 /* User.swift */; };
 		254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */; };
 		254FB4CD1DB0AAFF000AA0A3 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */; };
 		2550115A1DB5115E00ECF8DB /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255011591DB5115E00ECF8DB /* UserAccountViewModel.swift */; };
@@ -38,6 +41,7 @@
 		2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363791DAF580E00DF3E3F /* ProfileViewController.swift */; };
 		2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */; };
 		25A71D211DB1DDEC0060DF1E /* DLUIPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */; };
+		25C5B1A81DB9AC6B0077B3F3 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */; };
 		25C90B471DB7BCC8001A15DD /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C90B461DB7BCC8001A15DD /* Status.swift */; };
 		25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E501DB06E78000B258C /* UIButton-Extension.swift */; };
 		25F83E541DB08625000B258C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E531DB08625000B258C /* BaseViewController.swift */; };
@@ -55,11 +59,14 @@
 		25205A441DAFB57E00440741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		25205A461DAFB5A200440741 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		25205A4B1DAFCE6500440741 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Null.storyboard; path = ../../../Documents/iosWork/weibo/weibo/Null.storyboard; sourceTree = "<group>"; };
+		252787601DBB008A009DCD01 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		25320C9E1DB12015009E5C93 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		25320CA01DB1242F009E5C93 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		25320CA31DB12CE7009E5C93 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		25320CA41DB12CE7009E5C93 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		253328921DB218FF0038852E /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		25362D381DB8FD3B00668FD2 /* TimeTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTools.swift; sourceTree = "<group>"; };
+		25362D3A1DB9099000668FD2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		255011591DB5115E00ECF8DB /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
@@ -78,6 +85,7 @@
 		257363791DAF580E00DF3E3F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLUIPresentationController.swift; sourceTree = "<group>"; };
+		25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		25C90B461DB7BCC8001A15DD /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		25F83E501DB06E78000B258C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		25F83E531DB08625000B258C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 				25320CA21DB12CC9009E5C93 /* UIPopover */,
 				25205A3E1DAFB53B00440741 /* Home.storyboard */,
 				257363731DAF57D600DF3E3F /* HomeViewController.swift */,
+				252787601DBB008A009DCD01 /* HomeViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -237,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				25C90B461DB7BCC8001A15DD /* Status.swift */,
+				25362D3A1DB9099000668FD2 /* User.swift */,
+				25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 				25320CA01DB1242F009E5C93 /* TitleButton.swift */,
 				250CAC491DB3A4CD001B2A3C /* Common.swift */,
 				250CAC4B1DB3B4EC001B2A3C /* NetworkTools.swift */,
+				25362D381DB8FD3B00668FD2 /* TimeTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -439,11 +451,15 @@
 				25320CA11DB1242F009E5C93 /* TitleButton.swift in Sources */,
 				257363721DAF53ED00DF3E3F /* MainViewController.swift in Sources */,
 				253328931DB218FF0038852E /* PopoverAnimator.swift in Sources */,
+				25C5B1A81DB9AC6B0077B3F3 /* StatusViewModel.swift in Sources */,
+				252787611DBB008A009DCD01 /* HomeViewCell.swift in Sources */,
 				257363761DAF57E800DF3E3F /* MessageViewController.swift in Sources */,
 				25F83E541DB08625000B258C /* BaseViewController.swift in Sources */,
 				254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */,
 				257363741DAF57D600DF3E3F /* HomeViewController.swift in Sources */,
+				25362D391DB8FD3B00668FD2 /* TimeTools.swift in Sources */,
 				257363781DAF580100DF3E3F /* DiscoverViewController.swift in Sources */,
+				25362D3B1DB9099000668FD2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
