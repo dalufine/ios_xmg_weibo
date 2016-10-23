@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController : BaseViewController {
     lazy var titleBtn : TitleButton = TitleButton()
@@ -31,6 +32,8 @@ class HomeViewController : BaseViewController {
         //自动计算高度
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight=200
+        //去掉分割线
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
 }
@@ -85,9 +88,31 @@ extension HomeViewController{
                 let status = Status(dict: dict)
                 self.statusModels.append(StatusViewModel(status: status))
             }
+            //刷新数据
+            //self.tableView.reloadData()
+            self.cachePicFromURLs(viewModels: self.statusModels)
+        }
+    }
+    //缓存图片用于获取图片大小
+    func cachePicFromURLs(viewModels : [StatusViewModel]) {
+        //创建group
+        let group = DispatchGroup()
+        
+        
+        for viewMode in viewModels {
+            for picUrl in viewMode.picUrls {
+                group.enter()
+                SDWebImageManager.shared().downloadImage(with: picUrl, options: [], progress: nil, completed: { (_, _, _, _, _) in
+                    group.leave()
+                })
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
         }
     }
+    
 }
 
 //因为本身是tabviewcontroller，所以不需要遵守协议
@@ -98,10 +123,10 @@ extension HomeViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID")!
-//        
-//        let statusModel = statusModels[indexPath.row]
-//        cell.textLabel?.text = statusModel.sourceText
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID")!
+        //
+        //        let statusModel = statusModels[indexPath.row]
+        //        cell.textLabel?.text = statusModel.sourceText
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID") as! HomeViewCell
         
         cell.viewModel = statusModels[indexPath.row]

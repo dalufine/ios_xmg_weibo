@@ -41,6 +41,7 @@
 		2573637A1DAF580E00DF3E3F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363791DAF580E00DF3E3F /* ProfileViewController.swift */; };
 		2573637D1DAF7C9200DF3E3F /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */; };
 		25A71D211DB1DDEC0060DF1E /* DLUIPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */; };
+		25BA69371DBCC18000B319EE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BA69361DBCC18000B319EE /* PicCollectionView.swift */; };
 		25C5B1A81DB9AC6B0077B3F3 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */; };
 		25C90B471DB7BCC8001A15DD /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C90B461DB7BCC8001A15DD /* Status.swift */; };
 		25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E501DB06E78000B258C /* UIButton-Extension.swift */; };
@@ -85,6 +86,7 @@
 		257363791DAF580E00DF3E3F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2573637C1DAF7C9200DF3E3F /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		25A71D201DB1DDEC0060DF1E /* DLUIPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLUIPresentationController.swift; sourceTree = "<group>"; };
+		25BA69361DBCC18000B319EE /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		25C90B461DB7BCC8001A15DD /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		25F83E501DB06E78000B258C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				25205A3E1DAFB53B00440741 /* Home.storyboard */,
 				257363731DAF57D600DF3E3F /* HomeViewController.swift */,
 				252787601DBB008A009DCD01 /* HomeViewCell.swift */,
+				25BA69361DBCC18000B319EE /* PicCollectionView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				25C5B1A81DB9AC6B0077B3F3 /* StatusViewModel.swift in Sources */,
 				252787611DBB008A009DCD01 /* HomeViewCell.swift in Sources */,
 				257363761DAF57E800DF3E3F /* MessageViewController.swift in Sources */,
+				25BA69371DBCC18000B319EE /* PicCollectionView.swift in Sources */,
 				25F83E541DB08625000B258C /* BaseViewController.swift in Sources */,
 				254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */,
 				257363741DAF57D600DF3E3F /* HomeViewController.swift in Sources */,

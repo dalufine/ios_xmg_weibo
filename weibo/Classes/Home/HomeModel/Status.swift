@@ -14,6 +14,7 @@ class Status: NSObject {
     var text : String?
     var mid : Int = 0
     var user : User?
+    var pic_urls :[[String:String]]?
     
     init(dict : [String : Any]) {
         super.init()

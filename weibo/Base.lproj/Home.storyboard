@@ -135,6 +135,41 @@
                                                 <constraint firstItem="I1a-FJ-JPq" firstAttribute="centerY" secondItem="TaR-dw-of3" secondAttribute="centerY" id="owp-vd-ajf"/>
                                             </constraints>
                                         </view>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XIb-Wx-ScD" customClass="PicCollectionView" customModule="weibo" customModuleProvider="target">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="74" id="Gdy-vK-HMj"/>
+                                                <constraint firstAttribute="height" constant="48" id="rfK-5z-7m2"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EFy-m5-rdw">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCell" id="g8I-oh-kMZ" customClass="PicCollectionViewCell" customModule="weibo" customModuleProvider="target">
+                                                    <rect key="frame" x="12" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1wj-Z4-K1L"/>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="1wj-Z4-K1L" firstAttribute="top" secondItem="g8I-oh-kMZ" secondAttribute="top" id="7Iy-DP-gFM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1wj-Z4-K1L" secondAttribute="bottom" id="fB4-ll-hMz"/>
+                                                        <constraint firstItem="1wj-Z4-K1L" firstAttribute="leading" secondItem="g8I-oh-kMZ" secondAttribute="leading" id="uCu-nV-ddT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1wj-Z4-K1L" secondAttribute="trailing" id="zsn-q9-NCM"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="picImageview" destination="1wj-Z4-K1L" id="ey0-zL-N4Y"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="RY0-EX-vHO" firstAttribute="top" secondItem="2Lb-QT-qWk" secondAttribute="top" id="5GG-0f-gOD"/>
@@ -142,12 +177,14 @@
                                         <constraint firstItem="Y6K-WW-fgY" firstAttribute="top" secondItem="2Lb-QT-qWk" secondAttribute="bottom" constant="15" id="BO2-UF-yVp"/>
                                         <constraint firstItem="R0q-Nh-TdI" firstAttribute="top" secondItem="dQW-cS-PMc" secondAttribute="top" id="C5E-7Y-QD5"/>
                                         <constraint firstItem="RY0-EX-vHO" firstAttribute="leading" secondItem="2Lb-QT-qWk" secondAttribute="trailing" constant="15" id="N1s-KV-3pA"/>
+                                        <constraint firstItem="IlG-3n-2jh" firstAttribute="top" secondItem="XIb-Wx-ScD" secondAttribute="bottom" constant="10" id="Ri4-4S-vlI"/>
                                         <constraint firstItem="dQW-cS-PMc" firstAttribute="bottom" secondItem="2Lb-QT-qWk" secondAttribute="bottom" id="T0U-bN-MBb"/>
                                         <constraint firstItem="haP-Lu-JhL" firstAttribute="bottom" secondItem="2Lb-QT-qWk" secondAttribute="bottom" id="Tgo-go-uE4"/>
-                                        <constraint firstItem="IlG-3n-2jh" firstAttribute="top" secondItem="Y6K-WW-fgY" secondAttribute="bottom" constant="10" id="Vw2-pv-u2I"/>
                                         <constraint firstItem="2Lb-QT-qWk" firstAttribute="leading" secondItem="PSF-h7-zFj" secondAttribute="leading" constant="15" id="aDr-tE-Bpg"/>
                                         <constraint firstItem="2Lb-QT-qWk" firstAttribute="top" secondItem="PSF-h7-zFj" secondAttribute="top" constant="10" id="bHu-hU-pfl"/>
+                                        <constraint firstItem="XIb-Wx-ScD" firstAttribute="top" secondItem="Y6K-WW-fgY" secondAttribute="bottom" priority="700" constant="10" id="eVW-UO-Q0x"/>
                                         <constraint firstItem="R0q-Nh-TdI" firstAttribute="leading" secondItem="dQW-cS-PMc" secondAttribute="trailing" constant="10" id="fag-8V-8NX"/>
+                                        <constraint firstItem="XIb-Wx-ScD" firstAttribute="leading" secondItem="2Lb-QT-qWk" secondAttribute="leading" id="hGH-5Q-jwf"/>
                                         <constraint firstItem="Y6K-WW-fgY" firstAttribute="leading" secondItem="2Lb-QT-qWk" secondAttribute="leading" id="ikA-uC-TMW"/>
                                         <constraint firstItem="IlG-3n-2jh" firstAttribute="leading" secondItem="PSF-h7-zFj" secondAttribute="leading" id="p7f-kc-HBD"/>
                                         <constraint firstAttribute="trailing" secondItem="IlG-3n-2jh" secondAttribute="trailing" id="rXo-XW-m9L"/>
@@ -162,6 +199,9 @@
                                     <outlet property="contentLabel" destination="Y6K-WW-fgY" id="Amy-R9-A1V"/>
                                     <outlet property="contentLableCons" destination="yWZ-Kf-UaI" id="gqI-Ll-V8E"/>
                                     <outlet property="iconView" destination="2Lb-QT-qWk" id="h5I-xD-pJt"/>
+                                    <outlet property="picView" destination="XIb-Wx-ScD" id="92x-YS-Tya"/>
+                                    <outlet property="picViewHCons" destination="rfK-5z-7m2" id="dk2-6V-1H3"/>
+                                    <outlet property="picViewWCons" destination="Gdy-vK-HMj" id="MKk-Km-Sbk"/>
                                     <outlet property="screenNameLabel" destination="RY0-EX-vHO" id="uCG-nK-qZb"/>
                                     <outlet property="sourceLabel" destination="R0q-Nh-TdI" id="T6B-fL-ejJ"/>
                                     <outlet property="timeLabel" destination="dQW-cS-PMc" id="Sk7-xu-v2x"/>

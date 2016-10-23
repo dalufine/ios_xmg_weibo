@@ -39,13 +39,13 @@
             <color key="backgroundColor" red="0.97244364023208618" green="0.97260981798171997" blue="0.97243314981460571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="dAp-DU-v1A" secondAttribute="bottom" constant="200" id="BYJ-Lt-KHp"/>
+                <constraint firstItem="qUG-YW-PFT" firstAttribute="top" secondItem="dAp-DU-v1A" secondAttribute="bottom" constant="10" id="Doc-Lq-7m7"/>
                 <constraint firstAttribute="bottom" secondItem="nMO-ab-shX" secondAttribute="bottom" id="Fzh-e1-dlg"/>
                 <constraint firstAttribute="trailing" secondItem="nMO-ab-shX" secondAttribute="trailing" id="TWl-tT-3ZS"/>
                 <constraint firstItem="nMO-ab-shX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bNV-Rc-2z4"/>
                 <constraint firstItem="nMO-ab-shX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dEz-wh-N8v"/>
-                <constraint firstItem="qUG-YW-PFT" firstAttribute="top" secondItem="dAp-DU-v1A" secondAttribute="bottom" constant="20" id="lA3-ua-T4Q"/>
                 <constraint firstItem="dAp-DU-v1A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nTK-jG-3wd"/>
-                <constraint firstItem="qUG-YW-PFT" firstAttribute="centerX" secondItem="dAp-DU-v1A" secondAttribute="centerX" id="soV-DA-7zJ"/>
+                <constraint firstItem="qUG-YW-PFT" firstAttribute="centerX" secondItem="dAp-DU-v1A" secondAttribute="centerX" id="rsV-cm-dEo"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
