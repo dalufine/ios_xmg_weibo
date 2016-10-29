@@ -21,6 +21,9 @@ class HomeViewController : BaseViewController {
     
     lazy var statusModels : [StatusViewModel] = [StatusViewModel]()
     
+    lazy var tipLablel : UILabel = UILabel()
+    var isTipAnimateFinished = true
+    
     // MARK: - 系统回调
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,8 @@ class HomeViewController : BaseViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         setupHeaderView()
-        setFooterView()
+        setupFooterView()
+        setupTipView()
     }
     
 }
@@ -68,8 +72,20 @@ extension HomeViewController{
     }
     
     //添加上拉加载更多
-    func setFooterView(){
+    func setupFooterView(){
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadOldestStatus))
+    }
+    
+    //提示
+    func setupTipView(){
+        navigationController?.navigationBar.insertSubview(tipLablel, at: 0)
+        tipLablel.frame = CGRect(x: 0, y: 10, width: UIScreen.main.bounds.width, height: 32)
+        tipLablel.backgroundColor = UIColor.orange
+        tipLablel.textAlignment = .center
+        tipLablel.font = UIFont.systemFont(ofSize: 14)
+        tipLablel.textColor = UIColor.white
+        tipLablel.isHidden = true
+        self.tipLablel.alpha = 0
     }
 }
 
@@ -161,6 +177,30 @@ extension HomeViewController{
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            
+            //显示提示
+            self.showTipLabel(count: viewModels.count)
+        }
+    }
+    
+    private func showTipLabel(count : Int){
+        guard isTipAnimateFinished else {
+            return
+        }
+        isTipAnimateFinished = false
+        tipLablel.isHidden = false
+        tipLablel.text = count == 0 ? "没有新数据" : "\(count)条新数据"
+        UIView.animate(withDuration: 1.0, animations: {
+            self.tipLablel.frame.origin.y = 44
+            self.tipLablel.alpha = 1
+        }) { (_) in
+            UIView.animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+                self.tipLablel.frame.origin.y = 10
+                self.tipLablel.alpha = 0
+                }, completion: { (_) in
+                    self.isTipAnimateFinished = true
+                    self.tipLablel.isHidden = true
+            })
         }
     }
     

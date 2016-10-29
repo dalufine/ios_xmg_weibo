@@ -37,6 +37,9 @@ extension MainViewController{
 extension MainViewController{
     //如果方法加上private，该方法不会被添加到方法列表中，事件监听的本质是发送消息，而发送消息是OC的特性，它需要从方法列表中查找方法，如果需要添加private来限定访问，则需要下面的写法：@objc private
     func composeBtnClick(){
-        print("composeBtnClick")
+        let composeVc = ComposeController()
+        let composeNav = UINavigationController(rootViewController: composeVc)
+        
+        present(composeNav, animated: true, completion: nil)
     }
 }
