@@ -29,8 +29,9 @@ class HomeViewController : BaseViewController {
         }
         setupNavigationBar()
         loadStatuses()
-        //自动计算高度
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //自动计算高度，自动根据子控件的大小来计算高度，因为把底部工具栏距离底边的约束给删除了，这条不在起作用
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //设置估算高度
         tableView.estimatedRowHeight=200
         //去掉分割线
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -131,5 +132,10 @@ extension HomeViewController{
         
         cell.viewModel = statusModels[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let viewModel = statusModels[indexPath.row]
+        return viewModel.cellHeight
     }
 }

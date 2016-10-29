@@ -18,8 +18,11 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var contentLableCons: NSLayoutConstraint!
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetTopCons: NSLayoutConstraint!
     
     //
+    @IBOutlet weak var retweetContentLabel: UILabel!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var verifiedView: UIImageView!
     @IBOutlet weak var screenNameLabel: UILabel!
@@ -28,6 +31,8 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picView: PicCollectionView!
+    @IBOutlet weak var retweetbg: UIView!
+    @IBOutlet weak var toolView: UIView!
     
     var viewModel : StatusViewModel?{
         didSet {
@@ -46,6 +51,25 @@ class HomeViewCell: UITableViewCell {
             picViewHCons.constant = picSize.height
             //设置pic的urls
             picView.picUrls = viewModel.picUrls
+            
+            if viewModel.status?.retweeted_status != nil {
+                if let retweetUsername = viewModel.status?.retweeted_status?.user?.screen_name,let retweetText = viewModel.status?.retweeted_status?.text{
+                    retweetContentLabel.text = "@\(retweetUsername): "+retweetText
+                    retweetTopCons.constant = 15
+                }
+                retweetbg.isHidden = false
+            }else{
+                retweetTopCons.constant = 0
+                retweetContentLabel.text = nil
+                retweetbg.isHidden = true
+            }
+            
+            if viewModel.cellHeight == 0{
+                //重新计算cell高度
+                layoutIfNeeded()
+                viewModel.cellHeight=toolView.frame.maxY
+            }
+            
         }
     }
     
@@ -63,8 +87,11 @@ class HomeViewCell: UITableViewCell {
 extension HomeViewCell{
     func calculatePicSize(count : Int) ->CGSize {
         if count == 0 {
+            picViewBottomCons.constant = 0
             return CGSize.zero
         }
+        picViewBottomCons.constant = 10
+        
         let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
         if count == 1 {
             //String! SD库会自己解包

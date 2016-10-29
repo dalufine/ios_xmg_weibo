@@ -15,15 +15,19 @@ class Status: NSObject {
     var mid : Int = 0
     var user : User?
     var pic_urls :[[String:String]]?
+    var retweeted_status : Status?  //转发
     
     init(dict : [String : Any]) {
         super.init()
         setValuesForKeys(dict)
         
-        guard let userDict = dict["user"] as? [String : Any] else{
-            return
+        if let userDict = dict["user"] as? [String : Any]{
+            user = User(dict: userDict)
         }
-        user = User(dict: userDict)
+        
+        if let retweetedStatusDict = dict["retweeted_status"] as? [String : Any]{
+            retweeted_status = Status(dict: retweetedStatusDict);
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {

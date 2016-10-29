@@ -10,6 +10,7 @@ import UIKit
 
 class StatusViewModel: NSObject {
     var status : Status?
+    var cellHeight : CGFloat = 0
     
     //来源
     var sourceText : String?
@@ -53,10 +54,13 @@ class StatusViewModel: NSObject {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
         
+        // 处理头像
         let profileStr = status.user?.profile_image_url ?? ""
         profile_url = URL(string: profileStr)
         
-        if let picUrlDicts = status.pic_urls {
+        // 处理配图 status.pic_urls 是个字典，不可能为nil，没图片的时候是[]
+        let picUrlDicts = status.pic_urls!.count>0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        if let picUrlDicts = picUrlDicts {
             for picDict in picUrlDicts{
                 guard let picStr = picDict["thumbnail_pic"] else{
                     continue
