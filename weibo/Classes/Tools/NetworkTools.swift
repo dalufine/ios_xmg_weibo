@@ -67,11 +67,11 @@ extension NetworkTools{
 
 //请求微博首页数据
 extension NetworkTools{
-    func loadStatuses(finished : @escaping (_ result:[[String : Any]]?,_ error : Error?)->()){
+    func loadStatuses(since_id: Int, max_id: Int,finished : @escaping (_ result:[[String : Any]]?,_ error : Error?)->()){
         
         let urlStr = "https://api.weibo.com/2/statuses/home_timeline.json"
         //需要解包，不然拿到的是Optional("sfewfwef")
-        let params = ["access_token":(UserAccountViewModel.shareIntance.account?.access_token)!]
+        let params = ["access_token":(UserAccountViewModel.shareIntance.account?.access_token)!,"since_id": "\(since_id)","max_id": "\(max_id)"]
         request(methodType: .GET, url: urlStr, params: params) { (result, error) in
             guard let resultDict = result as? [String : Any] else{
                 finished(nil,error)

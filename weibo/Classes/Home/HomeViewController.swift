@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 class HomeViewController : BaseViewController {
     lazy var titleBtn : TitleButton = TitleButton()
@@ -28,13 +29,16 @@ class HomeViewController : BaseViewController {
             return
         }
         setupNavigationBar()
-        loadStatuses()
+        //loadStatuses()
         //自动计算高度，自动根据子控件的大小来计算高度，因为把底部工具栏距离底边的约束给删除了，这条不在起作用
         //tableView.rowHeight = UITableViewAutomaticDimension
         //设置估算高度
         tableView.estimatedRowHeight=200
         //去掉分割线
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        setupHeaderView()
+        setFooterView()
     }
     
 }
@@ -49,6 +53,23 @@ extension HomeViewController{
         titleBtn.setTitle("dalu", for: .normal)
         titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick(_:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
+    }
+    
+    //添加下拉刷新
+    func setupHeaderView(){
+        let headerView = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadLatestStatus))
+        
+        headerView?.setTitle("下拉刷新", for: .idle)
+        headerView?.setTitle("释放更新", for: .pulling)
+        headerView?.setTitle("加载中...", for: .refreshing)
+        
+        tableView.mj_header = headerView
+        tableView.mj_header.beginRefreshing()
+    }
+    
+    //添加上拉加载更多
+    func setFooterView(){
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadOldestStatus))
     }
 }
 
@@ -74,8 +95,29 @@ extension HomeViewController{
 
 //请求数据
 extension HomeViewController{
-    func loadStatuses(){
-        NetworkTools.shareInstance.loadStatuses { (result, error) in
+    // 加载最新的数据
+    func loadLatestStatus(){
+        loadStatuses(isNewData: true)
+    }
+    
+    func loadOldestStatus(){
+        loadStatuses(isNewData: false)
+    }
+    
+    
+    func loadStatuses(isNewData : Bool){
+        
+        var since_id = 0
+        var max_id = 0
+        if isNewData {
+            since_id = statusModels.first?.status?.mid ?? 0
+        }else{
+            max_id = statusModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0: (max_id-1)
+        }
+        
+        
+        NetworkTools.shareInstance.loadStatuses(since_id: since_id, max_id: max_id) {(result, error) in
             if error != nil {
                 print(error)
                 return
@@ -85,13 +127,19 @@ extension HomeViewController{
                 return
             }
             
+            var statusModels_tmp : [StatusViewModel] = [StatusViewModel]()
             for dict in resultArray {
                 let status = Status(dict: dict)
-                self.statusModels.append(StatusViewModel(status: status))
+                statusModels_tmp.append(StatusViewModel(status: status))
             }
-            //刷新数据
+            if isNewData {
+                self.statusModels = statusModels_tmp + self.statusModels
+            }else{
+                self.statusModels = self.statusModels + statusModels_tmp
+            }
             //self.tableView.reloadData()
-            self.cachePicFromURLs(viewModels: self.statusModels)
+            //缓存最新的图片
+            self.cachePicFromURLs(viewModels: statusModels_tmp)
         }
     }
     //缓存图片用于获取图片大小
@@ -111,6 +159,8 @@ extension HomeViewController{
         
         group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
     

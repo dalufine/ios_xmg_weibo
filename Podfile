@@ -10,5 +10,6 @@ target 'weibo' do
   pod 'SDWebImage'
   pod 'SnapKit'
   pod 'SVProgressHUD'
+  pod 'MJRefresh'
 
 end

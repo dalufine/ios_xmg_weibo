@@ -45,6 +45,11 @@ class HomeViewCell: UITableViewCell {
             vipView.image = viewModel.vipImage
             timeLabel.text = viewModel.createAtText
             contentLabel.text = viewModel.status?.text
+            if let sourceText = viewModel.sourceText {
+                sourceLabel.text = "来自 \(sourceText)"
+            }else{
+                sourceLabel.text = nil
+            }
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor.orange
             let picSize = calculatePicSize(count: viewModel.picUrls.count)
             picViewWCons.constant = picSize.width
