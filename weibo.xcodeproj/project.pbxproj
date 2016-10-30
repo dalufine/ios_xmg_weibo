@@ -18,6 +18,9 @@
 		25205A471DAFB5A200440741 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A461DAFB5A200440741 /* Profile.storyboard */; };
 		25205A4C1DAFCE6500440741 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25205A4B1DAFCE6500440741 /* Null.storyboard */; };
 		252787611DBB008A009DCD01 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252787601DBB008A009DCD01 /* HomeViewCell.swift */; };
+		25290F821DC5CF100030F6DF /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25290F811DC5CF100030F6DF /* PicPickerCollectionView.swift */; };
+		25290F851DC5D4120030F6DF /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25290F831DC5D4120030F6DF /* PicPickerViewCell.swift */; };
+		25290F861DC5D4120030F6DF /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25290F841DC5D4120030F6DF /* PicPickerViewCell.xib */; };
 		25320C9F1DB12015009E5C93 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25320C9E1DB12015009E5C93 /* UIBarButtonItem-Extension.swift */; };
 		25320CA11DB1242F009E5C93 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25320CA01DB1242F009E5C93 /* TitleButton.swift */; };
 		25320CA51DB12CE7009E5C93 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25320CA31DB12CE7009E5C93 /* PopoverViewController.swift */; };
@@ -65,6 +68,9 @@
 		25205A461DAFB5A200440741 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		25205A4B1DAFCE6500440741 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Null.storyboard; path = ../../../Documents/iosWork/weibo/weibo/Null.storyboard; sourceTree = "<group>"; };
 		252787601DBB008A009DCD01 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		25290F811DC5CF100030F6DF /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		25290F831DC5D4120030F6DF /* PicPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		25290F841DC5D4120030F6DF /* PicPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		25320C9E1DB12015009E5C93 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		25320CA01DB1242F009E5C93 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		25320CA31DB12CE7009E5C93 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,16 @@
 			path = OAuth;
 			sourceTree = "<group>";
 		};
+		25290F801DC5CEF30030F6DF /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				25290F811DC5CF100030F6DF /* PicPickerCollectionView.swift */,
+				25290F831DC5D4120030F6DF /* PicPickerViewCell.swift */,
+				25290F841DC5D4120030F6DF /* PicPickerViewCell.xib */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		25320CA21DB12CC9009E5C93 /* UIPopover */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +157,7 @@
 		254E23751DC4C21E009A1601 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				25290F801DC5CEF30030F6DF /* PicPicker */,
 				254E23761DC4C23E009A1601 /* ComposeController.swift */,
 				254E23771DC4C23E009A1601 /* ComposeController.xib */,
 				254E237A1DC4C740009A1601 /* ComposeTitleView.swift */,
@@ -400,6 +417,7 @@
 				25205A421DAFB55600440741 /* Message.storyboard in Resources */,
 				25205A451DAFB57E00440741 /* Discover.storyboard in Resources */,
 				25205A4C1DAFCE6500440741 /* Null.storyboard in Resources */,
+				25290F861DC5D4120030F6DF /* PicPickerViewCell.xib in Resources */,
 				2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,7 +479,9 @@
 			files = (
 				250CAC4A1DB3A4CD001B2A3C /* Common.swift in Sources */,
 				25548C8B1DB604A3003FCD4D /* WelcomeViewController.swift in Sources */,
+				25290F851DC5D4120030F6DF /* PicPickerViewCell.swift in Sources */,
 				25C90B471DB7BCC8001A15DD /* Status.swift in Sources */,
+				25290F821DC5CF100030F6DF /* PicPickerCollectionView.swift in Sources */,
 				250CAC4C1DB3B4EC001B2A3C /* NetworkTools.swift in Sources */,
 				250CAC4E1DB3CF6A001B2A3C /* UserAccount.swift in Sources */,
 				25A71D211DB1DDEC0060DF1E /* DLUIPresentationController.swift in Sources */,

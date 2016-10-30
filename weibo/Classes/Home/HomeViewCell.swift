@@ -114,7 +114,7 @@ extension HomeViewCell{
         let imageViewWH = (UIScreen.main.bounds.width - 2*edgeMargin - 2*itemMargin)/3
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         if count == 4 {
-            let picViewWH = imageViewWH*2+itemMargin
+            let picViewWH = imageViewWH*2 + itemMargin + 1
             return CGSize(width: picViewWH, height: picViewWH)
         }
         
