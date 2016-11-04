@@ -84,7 +84,7 @@ extension OAuthViewController : UIWebViewDelegate{
 extension OAuthViewController{
     func loadAccessToken(code : String){
         NetworkTools.shareInstance.loadAccessToken(code: code) { (result,error) in
-            if error != nil{
+            if let error = error{
                 print(error)
                 return
             }
@@ -107,7 +107,7 @@ extension OAuthViewController{
             return
         }
         NetworkTools.shareInstance.loadUserInfo(access_token : access_token, uid : uid) { (result,error) in
-            if error != nil{
+            if let error = error {
                 print(error)
                 return
             }

@@ -36,6 +36,7 @@
 		254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */; };
 		254FB4CD1DB0AAFF000AA0A3 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */; };
 		2550115A1DB5115E00ECF8DB /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255011591DB5115E00ECF8DB /* UserAccountViewModel.swift */; };
+		2551C3581DCCB85A00CF62B4 /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551C3571DCCB85A00CF62B4 /* EmoticonViewController.swift */; };
 		25548C8B1DB604A3003FCD4D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25548C891DB604A3003FCD4D /* WelcomeViewController.swift */; };
 		2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363591DAF3A8100DF3E3F /* AppDelegate.swift */; };
 		2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573635D1DAF3A8100DF3E3F /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		254FB4CA1DB0AAF0000AA0A3 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		254FB4CC1DB0AAFF000AA0A3 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		255011591DB5115E00ECF8DB /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		2551C3571DCCB85A00CF62B4 /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
 		25548C891DB604A3003FCD4D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		257363561DAF3A8100DF3E3F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257363591DAF3A8100DF3E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = Compose;
 			sourceTree = "<group>";
 		};
+		2551C3561DCCB84800CF62B4 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				2551C3571DCCB85A00CF62B4 /* EmoticonViewController.swift */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
 		25548C881DB60481003FCD4D /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 		2573636B1DAF51CB00DF3E3F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2551C3561DCCB84800CF62B4 /* Emoticon */,
 				254E23751DC4C21E009A1601 /* Compose */,
 				2573636E1DAF51CB00DF3E3F /* Main */,
 				2573636D1DAF51CB00DF3E3F /* Home */,
@@ -371,7 +382,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = dalu;
 				TargetAttributes = {
 					257363551DAF3A8100DF3E3F = {
@@ -497,6 +508,7 @@
 				253328931DB218FF0038852E /* PopoverAnimator.swift in Sources */,
 				254E237D1DC4CB10009A1601 /* ComposeTextView.swift in Sources */,
 				25C5B1A81DB9AC6B0077B3F3 /* StatusViewModel.swift in Sources */,
+				2551C3581DCCB85A00CF62B4 /* EmoticonViewController.swift in Sources */,
 				252787611DBB008A009DCD01 /* HomeViewCell.swift in Sources */,
 				257363761DAF57E800DF3E3F /* MessageViewController.swift in Sources */,
 				25BA69371DBCC18000B319EE /* PicCollectionView.swift in Sources */,

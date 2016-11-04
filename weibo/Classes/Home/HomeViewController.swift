@@ -134,7 +134,7 @@ extension HomeViewController{
         
         
         NetworkTools.shareInstance.loadStatuses(since_id: since_id, max_id: max_id) {(result, error) in
-            if error != nil {
+            if let error = error {
                 print(error)
                 return
             }

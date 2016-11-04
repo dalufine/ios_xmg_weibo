@@ -11,6 +11,7 @@ import UIKit
 class ComposeController: UIViewController {
     lazy var titleView : ComposeTitleView  = ComposeTitleView()
     lazy var images : [UIImage] = [UIImage]()
+    lazy var emoticonVc : EmoticonViewController = EmoticonViewController()
     
     @IBOutlet weak var textView: ComposeTextView!
     @IBOutlet weak var picPickerView: PicPickerCollectionView!
@@ -143,7 +144,7 @@ extension ComposeController {
     @IBAction func emoticonBtnClick(){
         //先退出键盘
         textView.resignFirstResponder()
-        textView.inputView = textView.inputView != nil ? nil : UISwitch()
+        textView.inputView = textView.inputView != nil ? nil : emoticonVc.view
         textView.becomeFirstResponder()
     }
     
