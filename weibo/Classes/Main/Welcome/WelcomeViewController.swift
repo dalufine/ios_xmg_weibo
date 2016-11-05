@@ -28,7 +28,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print("viewDidAppear")
         //改变约束
         iconBottomCons.constant = UIScreen.main.bounds.height - 200
         // 枚举类型不想传参，使用默认值的话 用 []
