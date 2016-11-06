@@ -14,7 +14,20 @@ class EmoticonViewController: UIViewController {
     lazy var collectionView : UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: EmoticonViewLayout())
     lazy var toolBar : UIToolbar = UIToolbar()
     lazy var manager = EmoticonManager()
+    //
+    var emoticonCallBack : (_ emoticon : Emoticon) -> ()
+    //
     
+    init(emoticonCallBack : @escaping (_ emoticon : Emoticon) -> ()){
+        self.emoticonCallBack = emoticonCallBack
+        //重写控制器的构造方法，必须要实现下面的方法
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -96,6 +109,12 @@ extension EmoticonViewController : UICollectionViewDataSource,UICollectionViewDe
         let emoticon = package.emoticons[indexPath.item]
         //
         insertRecentlyEmoticon(emoticon: emoticon)
+        //
+        emoticonCallBack(emoticon)
+        if 0 == indexPath.section && 0 != indexPath.item {
+            collectionView.reloadSections([indexPath.section])
+//            collectionView.reloadItems(at: [IndexPath(item: indexPath.item, section: indexPath.section),IndexPath(item: 0, section: indexPath.section)])
+        }
     }
     
     private func insertRecentlyEmoticon(emoticon : Emoticon){
@@ -110,6 +129,7 @@ extension EmoticonViewController : UICollectionViewDataSource,UICollectionViewDe
             manager.packages.first?.emoticons.remove(at: 19)
         }
         manager.packages.first?.emoticons.insert(emoticon, at: 0)
+        
     }
 }
 

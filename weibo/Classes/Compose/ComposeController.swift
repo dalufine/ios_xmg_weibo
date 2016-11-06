@@ -11,8 +11,10 @@ import UIKit
 class ComposeController: UIViewController {
     lazy var titleView : ComposeTitleView  = ComposeTitleView()
     lazy var images : [UIImage] = [UIImage]()
-    lazy var emoticonVc : EmoticonViewController = EmoticonViewController()
-    
+    lazy var emoticonVc : EmoticonViewController = EmoticonViewController {[weak self] (emoticon) in
+        self?.textView.insertEmoticon(emoticon)
+        self?.textViewDidChange(self!.textView)
+    }
     @IBOutlet weak var textView: ComposeTextView!
     @IBOutlet weak var picPickerView: PicPickerCollectionView!
     @IBOutlet weak var toolBottomCons: NSLayoutConstraint!
@@ -20,7 +22,6 @@ class ComposeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupNavigationBar()
         
         setupNotifications()
@@ -72,7 +73,7 @@ extension ComposeController {
     }
     
     func sendItemClick(){
-        dismiss(animated: true, completion: nil)
+        print(textView.getEmoticonString())
     }
     
     func keyboardWillChangeFrame(note: NSNotification){
