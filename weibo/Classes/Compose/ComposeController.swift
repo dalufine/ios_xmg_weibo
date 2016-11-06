@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeController: UIViewController {
     lazy var titleView : ComposeTitleView  = ComposeTitleView()
@@ -73,7 +74,25 @@ extension ComposeController {
     }
     
     func sendItemClick(){
-        print(textView.getEmoticonString())
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        textView.resignFirstResponder()
+        SVProgressHUD.showProgress(0, status: "正在发送...")
+        let statusText = textView.getEmoticonString()
+        //
+        let requestCallback = {[weak self](isSuccess: Bool) in
+            if !isSuccess {
+                self?.navigationItem.rightBarButtonItem?.isEnabled = true
+                SVProgressHUD.showError(withStatus: "发送失败")
+                return
+            }
+            SVProgressHUD.showSuccess(withStatus: "发送成功")
+            self?.dismiss(animated: true, completion: nil)
+        }
+        if let image = images.first {
+            NetworkTools.shareInstance.sendStatus(statusText: statusText,image: image,isSuccess : requestCallback)
+        }else{
+            NetworkTools.shareInstance.sendStatus(statusText: statusText,isSuccess : requestCallback)
+        }
     }
     
     func keyboardWillChangeFrame(note: NSNotification){

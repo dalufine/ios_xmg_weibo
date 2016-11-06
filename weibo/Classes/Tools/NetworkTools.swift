@@ -83,3 +83,37 @@ extension NetworkTools{
     }
 }
 
+//发送微博
+extension NetworkTools{
+    func sendStatus(statusText : String, isSuccess : @escaping (_ isSuccess : Bool) -> ()){
+        
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        let params = ["access_token":(UserAccountViewModel.shareIntance.account?.access_token)!,"status":statusText]
+        
+        request(methodType: .POST, url: urlString, params: params) { (res, err) in
+            if res != nil {
+                isSuccess(true)
+            }else{
+                isSuccess(false)
+            }
+        }
+    }
+    
+    func sendStatus(statusText : String,image : UIImage, isSuccess : @escaping (_ isSuccess : Bool) -> ()){
+        
+        let urlString = "https://api.weibo.com/2/statuses/upload.json"
+        let params = ["access_token":(UserAccountViewModel.shareIntance.account?.access_token)!,"status":statusText]
+        
+        post(urlString, parameters: params, constructingBodyWith: {(formData) -> Void in
+            if let imageData = UIImageJPEGRepresentation(image, 0.5) {
+                formData.appendPart(withFileData: imageData, name: "pic", fileName: "123.png", mimeType: "image/png")
+            }
+        }, progress: nil, success: {(_,_) -> Void in
+            isSuccess(true)
+        }, failure: {(_,err) -> Void in
+            print(err)
+            isSuccess(false)
+        })
+    }
+    
+}
