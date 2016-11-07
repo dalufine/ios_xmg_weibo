@@ -12,7 +12,7 @@ import SnapKit
 let PhotoBrowserCell = "PhotoBrowserCell"
 
 class PhotoBrowserViewController: UIViewController {
-    var indexPath : NSIndexPath
+    var indexPath : IndexPath
     var picUrls : [URL]
     
     //
@@ -26,7 +26,12 @@ class PhotoBrowserViewController: UIViewController {
         setupUI()
     }
     
-    init(indexPath : NSIndexPath, picUrls : [URL]) {
+    override func loadView() {
+        super.loadView()
+        view.bounds.size.width = view.bounds.size.width + 20
+    }
+    
+    init(indexPath : IndexPath, picUrls : [URL]) {
         self.indexPath = indexPath
         self.picUrls = picUrls
         super.init(nibName: nil, bundle: nil)
@@ -61,6 +66,8 @@ extension PhotoBrowserViewController{
         //
         closeBtn.addTarget(self, action: #selector(PhotoBrowserViewController.closeBtnClick), for: .touchUpInside)
         saveBtn.addTarget(self, action: #selector(PhotoBrowserViewController.saveBtnClick), for: .touchUpInside)
+        
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
     }
 }
 
@@ -82,7 +89,7 @@ extension PhotoBrowserViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserCell, for: indexPath) as! PhotoBrowserViewCell
         cell.picUrl = picUrls[indexPath.item]
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.gray
+        cell.backgroundColor = UIColor.black
         return cell
     }
 }

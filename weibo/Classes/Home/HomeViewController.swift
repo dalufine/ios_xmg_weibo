@@ -96,7 +96,7 @@ extension HomeViewController{
 // MARK: - 事件监听
 extension HomeViewController{
     func showPhotoBrower(note : Notification){
-        let indexPath = note.userInfo![ShowPhotoBrowerIndexKey] as! NSIndexPath
+        let indexPath = note.userInfo![ShowPhotoBrowerIndexKey] as! IndexPath
         let picUrls = note.userInfo![ShowPhotoBrowerUrlsKey] as! [URL]
         let photoBrowserVc = PhotoBrowserViewController(indexPath: indexPath, picUrls: picUrls)
         present(photoBrowserVc, animated: true, completion: nil)
