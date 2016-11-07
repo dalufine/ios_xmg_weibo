@@ -9,7 +9,6 @@
 import UIKit
 
 extension UITextView {
-    
     /**  插入表情  **/
     func insertEmoticon(_ emoticon : Emoticon){
         if emoticon.isEmpty {
@@ -57,5 +56,6 @@ extension UITextView {
         
         return attrMStr.string
     }
+    
 }
 

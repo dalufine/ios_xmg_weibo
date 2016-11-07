@@ -44,7 +44,12 @@ class HomeViewCell: UITableViewCell {
             screenNameLabel.text = viewModel.status?.user?.screen_name
             vipView.image = viewModel.vipImage
             timeLabel.text = viewModel.createAtText
-            contentLabel.text = viewModel.status?.text
+            if let attrString = FindEmoticon.shareInstance.findAttrString(statusText: viewModel.status?.text , font: contentLabel.font){
+                contentLabel.attributedText = attrString
+            }else{
+                contentLabel.text = viewModel.status?.text
+            }
+            
             if let sourceText = viewModel.sourceText {
                 sourceLabel.text = "来自 \(sourceText)"
             }else{
@@ -59,7 +64,12 @@ class HomeViewCell: UITableViewCell {
             
             if viewModel.status?.retweeted_status != nil {
                 if let retweetUsername = viewModel.status?.retweeted_status?.user?.screen_name,let retweetText = viewModel.status?.retweeted_status?.text{
-                    retweetContentLabel.text = "@\(retweetUsername): "+retweetText
+                    let retweetedText = "@\(retweetUsername): "+retweetText
+                    if let attrString = FindEmoticon.shareInstance.findAttrString(statusText: retweetedText , font: retweetContentLabel.font){
+                        retweetContentLabel.attributedText = attrString
+                    }else{
+                        retweetContentLabel.text = viewModel.status?.text
+                    }
                     retweetTopCons.constant = 15
                 }
                 retweetbg.isHidden = false
