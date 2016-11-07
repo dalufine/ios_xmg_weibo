@@ -11,5 +11,6 @@ target 'weibo' do
   pod 'SnapKit'
   pod 'SVProgressHUD'
   pod 'MJRefresh'
+  pod 'HYLabel'
 
 end

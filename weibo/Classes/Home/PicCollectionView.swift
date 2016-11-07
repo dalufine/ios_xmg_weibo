@@ -20,10 +20,11 @@ class PicCollectionView: UICollectionView {
         super.awakeFromNib()
         //在SB中，不能把数据源设置为自己，只有在代码里面设置
         dataSource = self
+        delegate = self
     }
 }
 
-extension PicCollectionView : UICollectionViewDataSource {
+extension PicCollectionView : UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picUrls.count
     }
@@ -31,6 +32,11 @@ extension PicCollectionView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PicCell", for: indexPath) as! PicCollectionViewCell
         cell.picUrl = picUrls[indexPath.item]
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //通知
+        let userInfo = [ShowPhotoBrowerIndexKey: indexPath,ShowPhotoBrowerUrlsKey: picUrls] as [String : Any]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowerNote), object: nil, userInfo: userInfo)
     }
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import HYLabel
 
 private let edgeMargin : CGFloat = 15
 private let itemMargin : CGFloat = 10
@@ -22,14 +23,14 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var retweetTopCons: NSLayoutConstraint!
     
     //
-    @IBOutlet weak var retweetContentLabel: UILabel!
+    @IBOutlet weak var retweetContentLabel: HYLabel!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var verifiedView: UIImageView!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var picView: PicCollectionView!
     @IBOutlet weak var retweetbg: UIView!
     @IBOutlet weak var toolView: UIView!
@@ -96,9 +97,23 @@ class HomeViewCell: UITableViewCell {
         //        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
         //        let imageViewWH = (UIScreen.main.bounds.width - 2*edgeMargin - 2*itemMargin)/3
         //        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+        
+        // 监听链接的点击
+        contentLabel.linkTapHandler = { (label, link, range) in
+            guard let url = URL(string: link) else {
+                return
+            }
+            UIApplication.shared.openURL(url)
+        }
+        retweetContentLabel.linkTapHandler = { (label, link, range) in
+            guard let url = URL(string: link) else {
+                return
+            }
+            UIApplication.shared.openURL(url)
+            
+        }
     }
 }
-
 extension HomeViewCell{
     func calculatePicSize(count : Int) ->CGSize {
         if count == 0 {

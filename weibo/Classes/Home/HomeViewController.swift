@@ -43,12 +43,16 @@ class HomeViewController : BaseViewController {
         setupHeaderView()
         setupFooterView()
         setupTipView()
+        setupNatifications()
     }
     
 }
 
 // MARK: - UI
 extension HomeViewController{
+    func setupNatifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showPhotoBrower(note:)), name: NSNotification.Name(rawValue: ShowPhotoBrowerNote), object: nil)
+    }
     ///自定义navigation
     func setupNavigationBar(){
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
@@ -91,6 +95,13 @@ extension HomeViewController{
 
 // MARK: - 事件监听
 extension HomeViewController{
+    func showPhotoBrower(note : Notification){
+        let indexPath = note.userInfo![ShowPhotoBrowerIndexKey] as! NSIndexPath
+        let picUrls = note.userInfo![ShowPhotoBrowerUrlsKey] as! [URL]
+        let photoBrowserVc = PhotoBrowserViewController(indexPath: indexPath, picUrls: picUrls)
+        present(photoBrowserVc, animated: true, completion: nil)
+    }
+    
     func titleBtnClick(_ titleBtn:TitleButton){
         titleBtn.isSelected = !titleBtn.isSelected
         

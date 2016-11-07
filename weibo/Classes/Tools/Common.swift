@@ -16,3 +16,8 @@ let redirect_uri = "http://dalufan.com/"
 // MARK: - 选择照片
 let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
 let PicPickerDelPhotoNote = "PicPickerDelPhotoNote"
+
+// MARK: - photo
+let ShowPhotoBrowerNote = "showPhotoBrowerNote"
+let ShowPhotoBrowerIndexKey = "indexPath"
+let ShowPhotoBrowerUrlsKey = "picUrls"

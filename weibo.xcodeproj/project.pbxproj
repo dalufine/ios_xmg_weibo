@@ -38,6 +38,8 @@
 		2550115A1DB5115E00ECF8DB /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255011591DB5115E00ECF8DB /* UserAccountViewModel.swift */; };
 		2551C3581DCCB85A00CF62B4 /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551C3571DCCB85A00CF62B4 /* EmoticonViewController.swift */; };
 		25548C8B1DB604A3003FCD4D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25548C891DB604A3003FCD4D /* WelcomeViewController.swift */; };
+		256D71011DD07C6C00BB6142 /* PhotoBrowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D71001DD07C6C00BB6142 /* PhotoBrowerViewController.swift */; };
+		256D71031DD0841100BB6142 /* PhotoBrowserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D71021DD0841100BB6142 /* PhotoBrowserViewCell.swift */; };
 		2573635A1DAF3A8100DF3E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257363591DAF3A8100DF3E3F /* AppDelegate.swift */; };
 		2573635F1DAF3A8100DF3E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573635D1DAF3A8100DF3E3F /* Main.storyboard */; };
 		257363611DAF3A8100DF3E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257363601DAF3A8100DF3E3F /* Assets.xcassets */; };
@@ -97,6 +99,8 @@
 		255011591DB5115E00ECF8DB /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		2551C3571DCCB85A00CF62B4 /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
 		25548C891DB604A3003FCD4D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		256D71001DD07C6C00BB6142 /* PhotoBrowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowerViewController.swift; sourceTree = "<group>"; };
+		256D71021DD0841100BB6142 /* PhotoBrowserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewCell.swift; sourceTree = "<group>"; };
 		257363561DAF3A8100DF3E3F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257363591DAF3A8100DF3E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573635E1DAF3A8100DF3E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,6 +211,15 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		256D70FF1DD07C6C00BB6142 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				256D71001DD07C6C00BB6142 /* PhotoBrowerViewController.swift */,
+				256D71021DD0841100BB6142 /* PhotoBrowserViewCell.swift */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		2573634D1DAF3A8100DF3E3F = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 		2573636D1DAF51CB00DF3E3F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				256D70FF1DD07C6C00BB6142 /* PhotoBrowser */,
 				25C90B451DB7BC39001A15DD /* HomeModel */,
 				25320CA21DB12CC9009E5C93 /* UIPopover */,
 				25205A3E1DAFB53B00440741 /* Home.storyboard */,
@@ -525,6 +539,7 @@
 				25548C8B1DB604A3003FCD4D /* WelcomeViewController.swift in Sources */,
 				25290F851DC5D4120030F6DF /* PicPickerViewCell.swift in Sources */,
 				25C90B471DB7BCC8001A15DD /* Status.swift in Sources */,
+				256D71011DD07C6C00BB6142 /* PhotoBrowerViewController.swift in Sources */,
 				25290F821DC5CF100030F6DF /* PicPickerCollectionView.swift in Sources */,
 				250CAC4C1DB3B4EC001B2A3C /* NetworkTools.swift in Sources */,
 				257FCECD1DCD7C6E003E85F0 /* Emoticon.swift in Sources */,
@@ -555,6 +570,7 @@
 				254FB4CB1DB0AAF0000AA0A3 /* VisitorView.swift in Sources */,
 				257363741DAF57D600DF3E3F /* HomeViewController.swift in Sources */,
 				254E23781DC4C23E009A1601 /* ComposeController.swift in Sources */,
+				256D71031DD0841100BB6142 /* PhotoBrowserViewCell.swift in Sources */,
 				254E237B1DC4C740009A1601 /* ComposeTitleView.swift in Sources */,
 				25362D391DB8FD3B00668FD2 /* TimeTools.swift in Sources */,
 				257363781DAF580100DF3E3F /* DiscoverViewController.swift in Sources */,
