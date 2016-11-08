@@ -118,7 +118,23 @@ extension PhotoBrowserViewController : PhotoBrowserCellDelegate{
         closeBtnClick()
     }
 }
-
+extension PhotoBrowserViewController : AnimatorDismissDelegate{
+    func imageView() -> UIImageView {
+        let imageView = UIImageView()
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        imageView.frame = cell.imageview.frame
+        imageView.image = cell.imageview.image
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }
+    
+    func indexPathForDissmiss() -> IndexPath {
+        let cell = collectionView.visibleCells.first!
+        return collectionView.indexPath(for: cell)!
+    }
+}
+//
 class PhotoBrowserCollectionViewLayout : UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()

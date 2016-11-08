@@ -37,7 +37,7 @@ extension PicCollectionView : UICollectionViewDataSource,UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //通知
         let userInfo = [ShowPhotoBrowerIndexKey: indexPath,ShowPhotoBrowerUrlsKey: picUrls] as [String : Any]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowerNote), object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowerNote), object: self, userInfo: userInfo)
     }
 }
 //
@@ -46,7 +46,7 @@ extension PicCollectionView : AnimatorPresentedDelegate {
         //获取cell
         let cell = self.cellForItem(at: indexPath)!
         //将当前cell的frame转换为相对于手机屏幕的frame
-        let startFrame = self.convert(cell.frame, from: UIApplication.shared.keyWindow!)
+        let startFrame = self.convert(cell.frame, to: UIApplication.shared.keyWindow!)
         return startFrame
     }
     
