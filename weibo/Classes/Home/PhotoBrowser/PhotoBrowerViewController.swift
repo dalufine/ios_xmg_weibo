@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 let PhotoBrowserCell = "PhotoBrowserCell"
 
@@ -77,20 +78,44 @@ extension PhotoBrowserViewController{
         dismiss(animated: true, completion: nil)
     }
     func saveBtnClick(){
+        // 1.获取当前正在显示的image
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        guard let image = cell.imageview.image else {
+            return
+        }
         
+        // 2.将image对象保存相册
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(PhotoBrowserViewController.image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    func image(image : UIImage, didFinishSavingWithError error : NSError?, contextInfo : AnyObject) {
+        var showInfo = ""
+        if error != nil {
+            showInfo = "保存失败"
+        } else {
+            showInfo = "保存成功"
+        }
+        
+        SVProgressHUD.showInfo(withStatus: showInfo)
     }
 }
 
 // MARK: - 代理
-extension PhotoBrowserViewController : UICollectionViewDataSource{
+extension PhotoBrowserViewController : UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picUrls.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserCell, for: indexPath) as! PhotoBrowserViewCell
         cell.picUrl = picUrls[indexPath.item]
+        cell.delegate = self
         cell.backgroundColor = UIColor.black
         return cell
+    }
+}
+extension PhotoBrowserViewController : PhotoBrowserCellDelegate{
+    func imageViewClick() {
+        closeBtnClick()
     }
 }
 

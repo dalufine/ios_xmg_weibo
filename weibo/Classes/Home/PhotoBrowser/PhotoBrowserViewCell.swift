@@ -9,12 +9,19 @@
 import UIKit
 import SDWebImage
 
+protocol PhotoBrowserCellDelegate : NSObjectProtocol {
+    func imageViewClick()
+}
+
+
 class PhotoBrowserViewCell: UICollectionViewCell {
     var picUrl : URL?{
         didSet{
             setupContent(picUrl: picUrl)
         }
     }
+    var delegate : PhotoBrowserCellDelegate?
+    
     //
     lazy var scrollView = UIScrollView()
     lazy var imageview = UIImageView()
@@ -43,6 +50,16 @@ extension PhotoBrowserViewCell{
         progressView.center = CGPoint(x: UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.5)
         progressView.isHidden = true
         progressView.backgroundColor = UIColor.clear
+        //
+        let tagGes = UITapGestureRecognizer(target: self, action: #selector(PhotoBrowserViewCell.imageViewClick))
+        imageview.addGestureRecognizer(tagGes)
+        imageview.isUserInteractionEnabled = true
+    }
+}
+
+extension PhotoBrowserViewCell{
+    func imageViewClick(){
+        delegate?.imageViewClick()
     }
 }
 
