@@ -19,6 +19,8 @@ class HomeViewController : BaseViewController {
         self?.titleBtn.isSelected = presented
     }
     
+    lazy var photoBrowserAnimator : PhotoBrowserAnimator = PhotoBrowserAnimator()
+    
     lazy var statusModels : [StatusViewModel] = [StatusViewModel]()
     
     lazy var tipLablel : UILabel = UILabel()
@@ -99,6 +101,8 @@ extension HomeViewController{
         let indexPath = note.userInfo![ShowPhotoBrowerIndexKey] as! IndexPath
         let picUrls = note.userInfo![ShowPhotoBrowerUrlsKey] as! [URL]
         let photoBrowserVc = PhotoBrowserViewController(indexPath: indexPath, picUrls: picUrls)
+        photoBrowserVc.modalPresentationStyle = .custom
+        photoBrowserVc.transitioningDelegate = photoBrowserAnimator
         present(photoBrowserVc, animated: true, completion: nil)
     }
     

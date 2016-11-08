@@ -21,6 +21,7 @@ class PicCollectionView: UICollectionView {
         //在SB中，不能把数据源设置为自己，只有在代码里面设置
         dataSource = self
         delegate = self
+        
     }
 }
 
@@ -39,9 +40,46 @@ extension PicCollectionView : UICollectionViewDataSource,UICollectionViewDelegat
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowerNote), object: nil, userInfo: userInfo)
     }
 }
+//
+extension PicCollectionView : AnimatorPresentedDelegate {
+    func startRect(indexPath: IndexPath) -> CGRect {
+        //获取cell
+        let cell = self.cellForItem(at: indexPath)!
+        //将当前cell的frame转换为相对于手机屏幕的frame
+        let startFrame = self.convert(cell.frame, from: UIApplication.shared.keyWindow!)
+        return startFrame
+    }
+    
+    func endRect(indexPath: IndexPath) -> CGRect {
+        //获取该位置的image对象
+        let picUrl = picUrls[indexPath.item]
+        let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: picUrl.absoluteString)!
+        //计算结束后的frame
+        let w = UIScreen.main.bounds.width
+        let h = w / image.size.width * image.size.height
+        var y : CGFloat = 0.0
+        if h < UIScreen.main.bounds.height {
+            y = (UIScreen.main.bounds.height - h) * 0.5
+        }
+        return CGRect(x: 0, y: y, width: w, height: h)
+    }
+    
+    func imageView(indexPath: IndexPath) -> UIImageView {
+        let picUrl = picUrls[indexPath.item]
+        let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: picUrl.absoluteString)!
+        let imageView = UIImageView()
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        //超出部分裁剪
+        imageView.clipsToBounds = true
+        return imageView
+    }
+    
+    
+}
 
 //item控件
-class PicCollectionViewCell: UICollectionViewCell {
+class PicCollectionViewCell : UICollectionViewCell {
     //
     var picUrl : URL?{
         didSet{
@@ -56,3 +94,4 @@ class PicCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var picImageview: UIImageView!
     
 }
+

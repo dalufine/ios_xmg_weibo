@@ -62,6 +62,7 @@
 		25BA69371DBCC18000B319EE /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BA69361DBCC18000B319EE /* PicCollectionView.swift */; };
 		25C5B1A81DB9AC6B0077B3F3 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */; };
 		25C90B471DB7BCC8001A15DD /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C90B461DB7BCC8001A15DD /* Status.swift */; };
+		25EE1F5D1DD1C3BC00EF4E0F /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EE1F5C1DD1C3BC00EF4E0F /* PhotoBrowserAnimator.swift */; };
 		25F098211DD0431700FCC110 /* FindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F098201DD0431700FCC110 /* FindEmoticon.swift */; };
 		25F83E511DB06E78000B258C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E501DB06E78000B258C /* UIButton-Extension.swift */; };
 		25F83E541DB08625000B258C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83E531DB08625000B258C /* BaseViewController.swift */; };
@@ -126,6 +127,7 @@
 		25BA69361DBCC18000B319EE /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		25C5B1A71DB9AC6B0077B3F3 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		25C90B461DB7BCC8001A15DD /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		25EE1F5C1DD1C3BC00EF4E0F /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		25F098201DD0431700FCC110 /* FindEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEmoticon.swift; sourceTree = "<group>"; };
 		25F83E501DB06E78000B258C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		25F83E531DB08625000B258C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				256D71001DD07C6C00BB6142 /* PhotoBrowerViewController.swift */,
 				256D71021DD0841100BB6142 /* PhotoBrowserViewCell.swift */,
 				2529FB371DD0B9F600622C5F /* ProgressView.swift */,
+				25EE1F5C1DD1C3BC00EF4E0F /* PhotoBrowserAnimator.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				250CAC4E1DB3CF6A001B2A3C /* UserAccount.swift in Sources */,
 				25A71D211DB1DDEC0060DF1E /* DLUIPresentationController.swift in Sources */,
 				25320C9F1DB12015009E5C93 /* UIBarButtonItem-Extension.swift in Sources */,
+				25EE1F5D1DD1C3BC00EF4E0F /* PhotoBrowserAnimator.swift in Sources */,
 				2529FB381DD0B9F600622C5F /* ProgressView.swift in Sources */,
 				2550115A1DB5115E00ECF8DB /* UserAccountViewModel.swift in Sources */,
 				257B6F6E1DCF1CEC0052B882 /* UITextView-Extension.swift in Sources */,
